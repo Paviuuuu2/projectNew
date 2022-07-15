@@ -1,21 +1,30 @@
+
 pipeline
 {
    agent any
    stages {
-      steps {
+     stage("PrepareBuild") {
+      steps{
          stage('Build'){
-       echo "Inside the build stage"
+         echo "Inside the build stage"
         }
-    stage('Test'){
-       echo "Inside the Test stage"
-        }
-    stage('Deploy'){
-       echo "Inside the Deploy stage"
-       }
       }
+       
+      stage("Preparetest") {
+      stage('Test'){
+         echo "Inside the Test stage"
+        }
+      }     
+       stage("PrepareDeploy") {
+       stage('Deploy'){
+         echo "Inside the Deploy stage"
+       }
+       }  
+       
+       }
+      
    }
 }
-
 
 
 
