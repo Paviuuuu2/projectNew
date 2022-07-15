@@ -2,7 +2,8 @@ pipeline
 {
    agent any
    stages {
-   stage ('Build'){
+      steps{
+         stage ('Build'){
        echo "Inside the build stage"
         }
     stage ('Test'){
@@ -11,6 +12,7 @@ pipeline
     stage ('Deploy'){
        echo "Inside the Deploy stage"
        }
+      }
    }
 }
 
